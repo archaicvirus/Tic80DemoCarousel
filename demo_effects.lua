@@ -1,10 +1,23 @@
--- title:   game title
--- author:  game developer, email, etc.
--- desc:    short description
--- site:    website link
+-- title:   Tic80VbankDemos
+-- author:  ArchaicVirus
+-- desc:    Carousel for displaying various pixel effects using up to 31 colors
+-- site:    github.com/archaicvirus/
 -- license: MIT License (change this to your license of choice)
 -- version: 0.1
 -- script:  lua
+
+-- CONTROLS
+-- Left / Right arrow keys			Switch effect
+-- Up / Down arrow keys				Swap Palette
+-- NUMPAD MINUS						Unsort Palette
+-- NUMPAD PLUS						Sort Palette - HUE
+-- NUMPAD ENTER						Sort Palette - BRIGHTNESS
+-- NUMPAD 1							Switch color mode - 16x / 32x
+-- NUMPAD 4 & 6						Switch background color
+-- NUMPAD 0							Disable UI
+
+-- 16x color mode takes a 16-color palette, and creates a new darker palette using these colors, so it still uses 31 total colors
+-- 32x color mode uses native 32 color palettes
 
 -----------------------------------------------
 ---Simplex Noise
@@ -2125,8 +2138,8 @@ end
 
 BG_COLOR = 0
 
-CURRENT_EFFECT = 13
-CURRENT_PALETTE = 2
+CURRENT_EFFECT = 1
+CURRENT_PALETTE = 7
 REPEAT_DELAY = 20
 REPEAT_TIME = 1
 COLOR_MODE = 32
@@ -3035,7 +3048,7 @@ for k, v in ipairs(EFFECTS) do
 	v:init()
 end
 
-set_palette(CURRENT_PALETTE, 1)
+set_palette(CURRENT_PALETTE, 3)
 --loadPalette(palettes[CURRENT_PALETTE].val, 0)
 EFFECTS[CURRENT_EFFECT]:init()
 
